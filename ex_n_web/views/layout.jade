@@ -1,0 +1,35 @@
+doctype html
+html
+    head
+        title= title
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        script(src='/javascripts/jquery.min.js')
+    body
+        nav.header
+            ul.list
+                li.logo
+                    a(href='/') Cblog
+                if user
+                    li
+                        a(href='/users/#{user}') 个人中心
+                else if username
+                    li
+                        a(href='/users/#{username}') 个人中心
+                if user
+
+                else if username
+
+                else
+                    li
+                        a(href='/login') 登录
+                    li
+                        a(href='/reg') 注册
+        div.container
+            block content
+
+            footer.footer
+                p
+                    a(href='http://www.cnblogs.com/ckCC/' target='_blank') Express © 2018
+
+        script(src='/javascripts/common.js')
+        script(src='/javascripts/#{pagename}.js')
